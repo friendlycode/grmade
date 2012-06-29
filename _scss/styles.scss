@@ -1,0 +1,187 @@
+@import "compass/utilities/general/clearfix";
+@import "compass/css3/border-radius";
+
+html,
+body {
+  height: 100%;
+}
+
+p {
+  margin: 0;
+}
+
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h1 {
+  margin: 0;
+}
+
+nav {
+  text-align: center;
+  button {
+    margin: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    font: 28px/1.5 bold 'Open Sans', helvetica-neue, helvetica, arial, san-serif;
+  }
+  li {
+    display: inline-block;
+    list-style: none;
+  }
+}
+ 
+ul.entries li {
+  position: relative;
+  margin: 20px auto;
+  padding: 20px;
+  background: #ececec;
+  width: 600px;
+}
+ 
+ul.entries img {
+  width: 600px;
+}
+ 
+ul.entries li h3 {
+  position: absolute;
+  bottom: -18px;
+  left: 17px;
+  font-size: 2em;
+}
+ul.entries a {
+  color: #ececec;
+}
+ul.entries a:hover {
+  color: #fff;
+}
+
+.wrapper {
+  min-height: 100%;
+}
+
+.main {
+  overflow:auto;
+  padding-bottom: 200px; /* Should be the same as the footer height. */
+}
+
+footer {
+  clear: both;
+  font-size: 0.75em;
+  text-align: center;
+  background-color: #222601;
+  padding: 20px;
+  height: 200px;
+  margin-top: -200px;
+}
+
+body {
+  font: 16px/1.5 'Open Sans', helvetica-neue, helvetica, arial, san-serif;
+  background: white;
+  color: #ececec;
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #ccc;
+  text-decoration: none;
+}
+ 
+a:hover {
+  color: #ececec;
+  text-decoration: underline;
+}
+
+header {
+  padding: 20px 0;
+  overflow: hidden;
+  text-align: center;
+}
+
+.banner img {
+  max-width: 100%;
+}
+
+section {
+  max-width: 100%;
+}
+
+#about {
+  @include clearfix;
+  background-color: #96BFD9;
+  font-size: 28px;
+  padding: 100px 0 0 0;
+  color: white;
+}
+
+.about-section {
+  float: left;
+  text-align: center;
+  margin: 25px 0 0 0;
+  a {
+    display: inline-block;
+    color: white;
+    padding: 25px 0 25px 0;
+    width: 400px;
+  }
+  a:hover, a.active  {
+    background-color: #53768C;
+  }
+}
+
+.accordion {
+  background-color: #53768C;
+  padding: 25px 0;
+  display: none;
+  p, ol, ul {
+    max-width: 800px;
+    margin: 10px auto;
+  }
+}
+
+#card-wrapper {
+  background-color: #D9583B;
+  max-width: 100%;
+}
+
+#cards {
+  text-align: center;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
+.card {
+  width: 250px;
+  margin: 10px;
+  padding: 10px;
+  background-color: white;
+  @include border-radius(10px, 10px);
+  float: left;
+  img {
+    max-width: 250px;
+    // A bit of a hack, not sure where the 6px bottom margin is coming from.
+    margin-bottom: -6px;
+  }
+
+  .black {
+    padding: 10px;
+    background-color: black;
+    @include border-radius(10px, 10px);
+    img {
+      max-width: 230px;
+    }
+  }
+
+  .round-corners img {
+    @include border-radius(10px, 10px);
+  }
+}

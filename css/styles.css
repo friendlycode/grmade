@@ -1,0 +1,235 @@
+/* line 5, ../_scss/styles.scss */
+html,
+body {
+  height: 100%;
+}
+
+/* line 9, ../_scss/styles.scss */
+p {
+  margin: 0;
+}
+
+/* line 13, ../_scss/styles.scss */
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* line 18, ../_scss/styles.scss */
+h1 {
+  margin: 0;
+}
+
+/* line 22, ../_scss/styles.scss */
+nav {
+  text-align: center;
+}
+/* line 24, ../_scss/styles.scss */
+nav button {
+  margin: 5px;
+  padding: 10px;
+  border-radius: 5px;
+  display: inline-block;
+  font: 28px/1.5 bold "Open Sans", helvetica-neue, helvetica, arial, san-serif;
+}
+/* line 31, ../_scss/styles.scss */
+nav li {
+  display: inline-block;
+  list-style: none;
+}
+
+/* line 37, ../_scss/styles.scss */
+ul.entries li {
+  position: relative;
+  margin: 20px auto;
+  padding: 20px;
+  background: #ececec;
+  width: 600px;
+}
+
+/* line 45, ../_scss/styles.scss */
+ul.entries img {
+  width: 600px;
+}
+
+/* line 49, ../_scss/styles.scss */
+ul.entries li h3 {
+  position: absolute;
+  bottom: -18px;
+  left: 17px;
+  font-size: 2em;
+}
+
+/* line 55, ../_scss/styles.scss */
+ul.entries a {
+  color: #ececec;
+}
+
+/* line 58, ../_scss/styles.scss */
+ul.entries a:hover {
+  color: #fff;
+}
+
+/* line 62, ../_scss/styles.scss */
+.wrapper {
+  min-height: 100%;
+}
+
+/* line 66, ../_scss/styles.scss */
+.main {
+  overflow: auto;
+  padding-bottom: 200px;
+  /* Should be the same as the footer height. */
+}
+
+/* line 71, ../_scss/styles.scss */
+footer {
+  clear: both;
+  font-size: 0.75em;
+  text-align: center;
+  background-color: #222601;
+  padding: 20px;
+  height: 200px;
+  margin-top: -200px;
+}
+
+/* line 81, ../_scss/styles.scss */
+body {
+  font: 16px/1.5 "Open Sans", helvetica-neue, helvetica, arial, san-serif;
+  background: white;
+  color: #ececec;
+  padding: 0;
+  margin: 0;
+}
+
+/* line 89, ../_scss/styles.scss */
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 94, ../_scss/styles.scss */
+a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+/* line 99, ../_scss/styles.scss */
+a:hover {
+  color: #ececec;
+  text-decoration: underline;
+}
+
+/* line 104, ../_scss/styles.scss */
+header {
+  padding: 20px 0;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* line 110, ../_scss/styles.scss */
+.banner img {
+  max-width: 100%;
+}
+
+/* line 114, ../_scss/styles.scss */
+section {
+  max-width: 100%;
+}
+
+/* line 118, ../_scss/styles.scss */
+#about {
+  overflow: hidden;
+  *zoom: 1;
+  background-color: #96BFD9;
+  font-size: 28px;
+  padding: 100px 0 0 0;
+  color: white;
+}
+
+/* line 126, ../_scss/styles.scss */
+.about-section {
+  float: left;
+  text-align: center;
+  margin: 25px 0 0 0;
+}
+/* line 130, ../_scss/styles.scss */
+.about-section a {
+  display: inline-block;
+  color: white;
+  padding: 25px 0 25px 0;
+  width: 400px;
+}
+/* line 136, ../_scss/styles.scss */
+.about-section a:hover, .about-section a.active {
+  background-color: #53768C;
+}
+
+/* line 141, ../_scss/styles.scss */
+.accordion {
+  background-color: #53768C;
+  padding: 25px 0;
+  display: none;
+}
+/* line 145, ../_scss/styles.scss */
+.accordion p, .accordion ol, .accordion ul {
+  max-width: 800px;
+  margin: 10px auto;
+}
+
+/* line 151, ../_scss/styles.scss */
+#card-wrapper {
+  background-color: #D9583B;
+  max-width: 100%;
+}
+
+/* line 156, ../_scss/styles.scss */
+#cards {
+  text-align: center;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
+/* line 162, ../_scss/styles.scss */
+.card {
+  width: 250px;
+  margin: 10px;
+  padding: 10px;
+  background-color: white;
+  -webkit-border-radius: 10px 10px;
+  -moz-border-radius: 10px / 10px;
+  -o-border-radius: 10px / 10px;
+  -ms-border-radius: 10px / 10px;
+  -khtml-border-radius: 10px / 10px;
+  border-radius: 10px / 10px;
+  float: left;
+}
+/* line 169, ../_scss/styles.scss */
+.card img {
+  max-width: 250px;
+  margin-bottom: -6px;
+}
+/* line 175, ../_scss/styles.scss */
+.card .black {
+  padding: 10px;
+  background-color: black;
+  -webkit-border-radius: 10px 10px;
+  -moz-border-radius: 10px / 10px;
+  -o-border-radius: 10px / 10px;
+  -ms-border-radius: 10px / 10px;
+  -khtml-border-radius: 10px / 10px;
+  border-radius: 10px / 10px;
+}
+/* line 179, ../_scss/styles.scss */
+.card .black img {
+  max-width: 230px;
+}
+/* line 184, ../_scss/styles.scss */
+.card .round-corners img {
+  -webkit-border-radius: 10px 10px;
+  -moz-border-radius: 10px / 10px;
+  -o-border-radius: 10px / 10px;
+  -ms-border-radius: 10px / 10px;
+  -khtml-border-radius: 10px / 10px;
+  border-radius: 10px / 10px;
+}

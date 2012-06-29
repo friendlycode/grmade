@@ -1,0 +1,50 @@
+---
+layout: default
+---
+
+<section id="about">
+  <div class="content">
+    <p>GRMade is a project to promote creation in the city of Grand Rapids, MI. It features digital and physical creations and the people behind them.</p>
+    <div class="about-section">
+      <a href="#" class="about-link tell">Make things? Tell us!</a>
+    </div>
+    <div class="about-section">
+      <a href="#" class="about-link help">Want to help?</a>
+    </div>
+  </div>
+</section>
+
+<section class="accordion" id="tell">
+  {% include tell.html %}
+</section>
+
+<section class="accordion" id="help">
+  {% include help.html %}
+</section>
+
+<nav>
+  <a href="#" data-filter="*">All</a>
+  <ul id="filters">
+    <li><a href="#" data-filter=".maker">Makers</a></li>
+    <li><a href="#" data-filter=".made">Made</a></li>
+    <li><a href="#" data-filter=".digital">Digital</a></li>
+    <li><a href="#" data-filter=".physical">Physical</a></li>
+  </ul>
+</nav>
+
+<section id="card-wrapper">
+  <div id="cards">
+    {% for post in site.posts %}
+      <div class="card {% for class in post.category %}{{ class }} {% endfor %}">
+        <div class="{{ post.img_class }}">
+          {% if post.image == NULL %}  
+            <a href="{{ post.homepage }}"><h2 class="content">{{ post.title }}</h2></a>
+          {% else %}
+            <a href="{{ post.homepage }}"><img src="{{ post.image }}"></a>
+          {% endif %}
+        </div>
+      </div>  
+    {% endfor %}
+  </div>
+</section>
+
