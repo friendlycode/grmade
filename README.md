@@ -4,8 +4,6 @@ GRMade.org is a project to promote creation in the city of Grand Rapids, MI. It 
 # How to Help
 This site is built using the [Jekyll static site generator](http://jekyllrb.com/). I welcome any help, be it code or content.
 
-If you
-
 # Author
 [Jonathan Pichot](http://about.me/pichot)
 
