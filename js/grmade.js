@@ -1,8 +1,17 @@
 jQuery(document).ready(function(){
 
-  var $container = $('#cards');
+  var aboutHeight = [];
 
-  $container.imagesLoaded( function(){
+  // $('#about .content div').each(function (index) {
+  //   var t = $(this);
+  //   // t.height(t.height());  // Read the computed height and then set it explicitly
+  //   aboutHeight[t.attr('id')] = t.height + 90;
+  //   if (t.attr('id') == 'tell' || t.attr('id') == 'help') t.hide();
+  // });
+
+  // Isotope
+  var $container = $('#cards');
+  $container.imagesLoaded(function(){
     $container.isotope({
       itemSelector : '.card',
       columnWidth : 270,
@@ -10,57 +19,59 @@ jQuery(document).ready(function(){
     });
   });
 
-  $('nav a').click(function(){
+  // Isotope filtering
+  $('#filters a').click(function(){
+    var active_filter = $('nav a.active');
     var selector = $(this).attr('data-filter');
-    $container.isotope({ filter: selector });
-    return false;
-  });
 
-  $('.tell').click(function() {
-    var tell_display = $('#tell').css('display');
-    var help_display = $('#help').css('display');
-
-    if (tell_display == 'none' && help_display == 'none') {
-      $('.tell').addClass('active');
-      $('#tell').slideDown('slow', function() {});
-
-    } else if (tell_display == 'none' && help_display != 'none') {
-      $('.tell').addClass('active');
-      $('.help').removeClass('active');
-      $('#help').slideUp('slow', function() {
-        $('#tell').slideDown('slow', function() {});
-      });
-
+    if ($(this).hasClass('active')) {
+      $(this).removeClass('active');
+      $container.isotope({ filter: '*' });
+      return false;
     } else {
-      $('#tell').slideUp('slow', function() {
-        $('.tell').removeClass('active');
-      });
-
+      active_filter.removeClass('active');
+      $(this).addClass('active');
+      $container.isotope({ filter: selector });
+      return false;
     }
   });
 
-  $('.help').click(function() {
-    var tell_display = $('#tell').css('display');
-    var help_display = $('#help').css('display');
+  $('#about-links a').click(function() {
+    var activeState  = $(this).hasClass('active');
+    var introState   = $('#intro').is(':visible');
+    var clickedClass;
+    var unclickedClass;
 
-    if (help_display == 'none' && tell_display == 'none') {
-      $('.help').addClass('active');
-      $('#help').slideDown('slow', function() {});
+    switch ($(this).hasClass('tell')) {
+      case true:
+        clickedClass   = 'tell';
+        unclickedClass = 'help';
+        break;
+      case false:
+        clickedClass   = 'help';
+        unclickedClass = 'tell';
+        break;
+    }
 
-    } else if (help_display == 'none' && tell_display != 'none') {
-      $('.help').addClass('active');
-      $('.tell').removeClass('active');
-      $('#tell').slideUp('slow', function() {
-        $('#help').slideDown('slow', function() {});
+    if (activeState === true) {
+      $(this).removeClass('active');
+      $('#' + clickedClass).slideUp('slow', function() {
+        $('#intro').slideDown('slow');
       });
 
-    } else {
-      $('#help').slideUp('slow', function() {
-        $('.help').removeClass('active');
+    } else if (activeState === false && introState === true) {
+      $(this).addClass('active');
+      $('#intro').slideUp('slow', function() {
+        $('#' + clickedClass).slideDown('slow');
+      });
+
+    } else if (activeState === false && introState === false) {
+      $(this).addClass('active');
+      $('.' + unclickedClass).removeClass('active');
+      $('#' + unclickedClass).slideUp('slow', function() {
+        $('#' + clickedClass).slideDown('slow');
       });
     }
   });
-
-
 });
 

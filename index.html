@@ -2,29 +2,33 @@
 layout: default
 ---
 
+<div id="top-gradient"></div>
 <section id="about">
   <div class="content">
-    <p>GRMade is a project to promote creation in the city of Grand Rapids, MI. It features digital and physical creations and the people behind them.</p>
-    <div class="about-section">
-      <a href="#" class="about-link tell">Make things? Tell us!</a>
+    <div id="intro">
+      {% include intro.html %}
     </div>
-    <div class="about-section">
-      <a href="#" class="about-link help">Want to help?</a>
+
+    <nav>
+      <ul id="about-links">
+        <li><a href="#" class="tell">Make things? Tell us!</a></li>
+        <li><a href="#" class="help">Want to help?</a></li>
+      </ul>
+    </nav>
+
+    <div id="tell">
+      {% include tell.html %}
+    </div>
+
+    <div id="help">
+      {% include help.html %}
     </div>
   </div>
 </section>
+<div id="bottom-gradient"></div>
 
-<section class="accordion" id="tell">
-  {% include tell.html %}
-</section>
-
-<section class="accordion" id="help">
-  {% include help.html %}
-</section>
-
-<nav>
-  <a href="#" data-filter="*">All</a>
-  <ul id="filters">
+<nav id="filters">
+  <ul>
     <li><a href="#" data-filter=".maker">Makers</a></li>
     <li><a href="#" data-filter=".made">Made</a></li>
     <li><a href="#" data-filter=".digital">Digital</a></li>
@@ -37,13 +41,13 @@ layout: default
     {% for post in site.posts %}
       <div class="card {% for class in post.category %}{{ class }} {% endfor %}">
         <div class="{{ post.img_class }}">
-          {% if post.image == NULL %}  
+          {% if post.image == NULL %}
             <a href="{{ post.homepage }}"><h2 class="content">{{ post.title }}</h2></a>
           {% else %}
             <a href="{{ post.homepage }}"><img src="{{ post.image }}"></a>
           {% endif %}
         </div>
-      </div>  
+      </div>
     {% endfor %}
   </div>
 </section>

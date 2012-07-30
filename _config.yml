@@ -1,2 +1,11 @@
 permalink: /:categories/:title
-exclude: ['Rakefile', 'README.md', 'config.rb']
+exclude: ['Rakefile', 'Gemfile', 'README.md', 'config.rb', 'Gemfile.lock']
+mini_magick:
+    makers:
+        source: img/_source/original/makers
+        destination: img/makers
+        resize: "250>"
+    made:
+        source: img/_source/original/made
+        destination: img/made
+        resize: "250>"
