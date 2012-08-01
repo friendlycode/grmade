@@ -17,6 +17,7 @@ jQuery(document).ready(function(){
       columnWidth : 270,
       animationEngine : 'best-available'
     });
+    $container.isotope('shuffle');
   });
 
   // Isotope filtering
