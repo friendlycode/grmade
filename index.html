@@ -40,12 +40,8 @@ layout: default
   <div id="cards">
     {% for post in site.posts %}
       <div class="card {% for class in post.category %}{{ class }} {% endfor %}">
-        <div class="{{ post.img_class }}">
-          {% if post.image == NULL %}
-            <a href="{{ post.homepage }}"><h2 class="content">{{ post.title }}</h2></a>
-          {% else %}
-            <a href="{{ post.homepage }}"><img src="{{ post.image }}"></a>
-          {% endif %}
+        <div class="inner-card {{ post.img_class }}" {% if post.color %}style="background-color:#{{ post.color }}"{% endif %}>
+          <a href="{{ post.homepage }}"><img src="{{ post.image }}"></a>
         </div>
       </div>
     {% endfor %}

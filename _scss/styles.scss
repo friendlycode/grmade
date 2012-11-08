@@ -227,6 +227,10 @@ section {
     margin-bottom: -6px; // A bit of a hack, not sure where the 6px bottom margin is coming from.
   }
 
+  .inner-card {
+    @include border-radius(10px, 10px);
+  }
+
   .black {
     padding: 10px;
     background-color: black;
